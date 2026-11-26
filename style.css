@@ -1,0 +1,80 @@
+:root{
+  --bg:#f6faff; --card:#ffffff; --text:#14213d; --muted:#4d5d7a;
+  --accent:#1f5bd8; --accent-ink:#ffffff; --line:#dbe6f7; --gold:#f2b61c;
+  --live:#168a4a; --soon:#9a6a00;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --bg:#0b1426; --card:#13203a; --text:#eaf1ff; --muted:#a9b8d6;
+    --accent:#5b8dff; --accent-ink:#071126; --line:#243556; --live:#4fd18b; --soon:#f2c14e; }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);
+  font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+img{max-width:100%;display:block}
+a{color:var(--accent)}
+
+.nav{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;
+  gap:12px;padding:10px 20px;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);font-weight:700}
+.brand img{border-radius:50%}
+.nav nav{display:flex;align-items:center;gap:18px}
+.nav nav a{text-decoration:none;color:var(--text);font-size:15px}
+.nav nav a:hover{color:var(--accent)}
+#lang{border:1px solid var(--line);background:var(--card);color:var(--text);
+  border-radius:8px;padding:4px 8px;font:600 13px/1.4 system-ui,sans-serif;cursor:pointer;max-width:130px}
+
+.hero{height:min(82vh,56.25vw);min-height:440px;display:flex;align-items:flex-end;justify-content:center;
+  padding:0 16px 28px;background:url("img/hero.jpg") center/cover}
+.hero-card{background:rgba(255,255,255,.9);color:#14213d;backdrop-filter:blur(6px);
+  border-radius:20px;padding:18px 28px;text-align:center;max-width:520px;
+  box-shadow:0 14px 40px rgba(8,25,60,.3)}
+.hero p{margin:0 0 12px;font-size:18px;color:#34456a}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:12px 24px;
+  border-radius:12px;font-weight:700;text-decoration:none}
+.btn:hover{filter:brightness(1.08)}
+.btn.small{padding:9px 16px;font-size:15px}
+.btn.ghost{background:transparent;color:var(--accent);border:2px solid var(--accent)}
+
+.wrap{max-width:1080px;margin:0 auto;padding:64px 20px}
+.narrow{max-width:720px}
+.center{text-align:center}
+.section-gap{margin-top:56px}
+.section-note{margin:-14px 0 22px;color:var(--muted)}
+.card h3 small{display:block;font-size:13px;font-weight:600;color:var(--muted)}
+h2{font-size:clamp(26px,4vw,36px);margin:0 0 24px;letter-spacing:-.3px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:24px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;
+  display:flex;flex-direction:column;box-shadow:0 6px 24px rgba(20,40,90,.07)}
+.card img,.card-art{width:100%;aspect-ratio:16/9;object-fit:cover}
+.card-art.poo{display:grid;place-items:center;text-align:center;
+  background:radial-gradient(circle at 70% 20%,#c98f4a,#6b4423 75%);
+  color:#fff;font:800 32px/1.1 system-ui,sans-serif;text-shadow:0 3px 0 rgba(0,0,0,.3)}
+.card-art.poo em{font-style:normal;font-size:20px;opacity:.9}
+.card-art.crav{display:grid;place-items:center;
+  background:radial-gradient(circle at 30% 20%,#7fd35a,#2f8f3a 70%);
+  color:#fff;font:800 44px/1 system-ui,sans-serif;text-shadow:0 3px 0 rgba(0,0,0,.25)}
+.card-body{padding:18px 20px 22px;display:flex;flex-direction:column;gap:10px;flex:1;align-items:flex-start}
+.card h3{margin:0;font-size:24px}
+.card p{margin:0;color:var(--muted);font-size:15.5px;flex:1}
+.tag{font-size:12.5px;font-weight:700;padding:3px 10px;border-radius:99px;border:1px solid currentColor}
+.tag.live{color:var(--live)} .tag.soon{color:var(--soon)}
+
+.about{background:var(--card);border-block:1px solid var(--line)}
+.about p{color:var(--muted);font-size:18px}
+.social{margin-top:22px;color:var(--muted)}
+.social a{margin:0 6px}
+
+footer{text-align:center;padding:32px 16px 44px;color:var(--muted);font-size:14.5px}
+footer p{margin:4px 0}
+
+@media (max-width:560px){
+  .nav nav{gap:12px} .nav nav a{font-size:14px}
+  .brand span{display:none}
+  .hero-card{padding:24px 20px}
+  .wrap{padding:48px 16px}
+}

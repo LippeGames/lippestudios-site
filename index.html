@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lippe Studios</title>
+<meta name="description" content="Lippe Studios is an independent game studio making games for mobile and PC: Milim, Sarrafo, Sordim and Crav.">
+<meta property="og:title" content="Lippe Studios">
+<meta property="og:description" content="Independent game studio. Games for mobile and PC.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav">
+  <a class="brand" href="#top" aria-label="Lippe Studios">
+    <img src="img/logo-mark.png" alt="" width="36" height="36">
+    <span>Lippe Studios</span>
+  </a>
+  <nav>
+    <a href="#games" data-i18n="nav_games">Games</a>
+    <a href="#about" data-i18n="nav_about">About</a>
+    <a href="#contact" data-i18n="nav_contact">Contact</a>
+    <select id="lang" aria-label="Language"><option value="en">English</option></select>
+  </nav>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="hero-card">
+      <h1 class="sr-only">Lippe Studios</h1>
+      <p data-i18n="hero_sub">Independent games, made to be played together.</p>
+      <a class="btn" href="#games" data-i18n="hero_cta">See our games</a>
+    </div>
+  </section>
+
+  <section id="games" class="wrap">
+
+    <h2 data-i18n="pub_title">Published</h2>
+    <div class="grid">
+      <article class="card">
+        <img src="img/milim.jpg" alt="Milim" loading="lazy">
+        <div class="card-body">
+          <span class="tag live" data-i18n="milim_tag">Available now · Android</span>
+          <h3>Milim</h3>
+          <p data-i18n="milim_text">Guess the secret 5-letter word in 6 tries, guided by colors. Play on your own and compete for points with your friends. In Portuguese, English and Spanish.</p>
+          <a class="btn small" href="https://play.google.com/store/apps/details?id=com.lippegames.milim" data-i18n="milim_cta">Get it on Google Play</a>
+        </div>
+      </article>
+    </div>
+
+    <h2 class="section-gap" data-i18n="dev_title">In development</h2>
+    <div class="grid">
+      <article class="card">
+        <img src="img/sarrafo.jpg" alt="Sarrafo" loading="lazy">
+        <div class="card-body">
+          <span class="tag soon" data-i18n="sarrafo_tag">Closed testing · Android</span>
+          <h3>Sarrafo</h3>
+          <p data-i18n="sarrafo_text">A battle arena for up to 20 fighters. Grab runes, use special moves and grow bigger and stronger to be the last one standing.</p>
+          <a class="btn small ghost" href="https://youtu.be/776LZ8F5TtE" data-i18n="trailer">Watch the trailer</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="img/sordim.jpg" alt="Sordim" loading="lazy">
+        <div class="card-body">
+          <span class="tag soon" data-i18n="sordim_tag">In development · PC (Steam)</span>
+          <h3>Sordim</h3>
+          <p data-i18n="sordim_text">A survival RPG in a big world of floating islands. Team up with friends, level up your skills and face the creatures of every region.</p>
+          <a class="btn small ghost" href="https://youtu.be/cRInw1_fFuU" data-i18n="trailer">Watch the trailer</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-art crav"><span>Crav</span></div>
+        <div class="card-body">
+          <span class="tag soon" data-i18n="crav_tag">In development · Android</span>
+          <h3>Crav</h3>
+          <p data-i18n="crav_text">A survival action game for your phone. Dodge with your finger, hold your ground wave after wave and take on the boss at the end of each map.</p>
+        </div>
+      </article>
+    </div>
+
+    <h2 class="section-gap" data-i18n="partner_title">Partner games</h2>
+    <p class="section-note" data-i18n="partner_note">Games from our friends at Fazay Games.</p>
+    <div class="grid">
+      <article class="card">
+        <img src="img/overspray.jpg" alt="OVERSPRAY" loading="lazy">
+        <div class="card-body">
+          <span class="tag live" data-i18n="overspray_tag">Free demo · PC (Steam)</span>
+          <h3>OVERSPRAY <small data-i18n="by_fazay">by Fazay Games</small></h3>
+          <p data-i18n="overspray_text">A tactical 4v4 first-person paintball shooter. Try the free demo on Steam.</p>
+          <a class="btn small" href="https://store.steampowered.com/app/5652150/OVERSPRAY_Demo/" data-i18n="overspray_cta">Play the free demo</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-art poo"><span>Poo Tycoon<br><em>Total Chaos</em></span></div>
+        <div class="card-body">
+          <span class="tag soon" data-i18n="poo_tag">Closed testing · PC (Steam)</span>
+          <h3>Poo Tycoon: Total Chaos <small data-i18n="by_fazay">by Fazay Games</small></h3>
+          <p data-i18n="poo_text">A tycoon game full of chaos. It is in closed testing for now.</p>
+        </div>
+      </article>
+    </div>
+
+  </section>
+
+  <section id="about" class="about">
+    <div class="wrap narrow">
+      <h2 data-i18n="about_title">About us</h2>
+      <p data-i18n="about_p1">Lippe Studios is an independent game studio. We make games for phones and for PC, and we like games that are better with friends.</p>
+      <p data-i18n="about_p2">Our games share names from Hebrew: Milim means “words”, Crav means “battle” and Sordim means “the survivors”. They all live in the same world of floating islands.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="wrap narrow center">
+    <h2 data-i18n="contact_title">Contact</h2>
+    <p data-i18n="contact_text">Questions, press or partnerships? Write to us.</p>
+    <a class="btn" href="mailto:lippestudios@gmail.com">lippestudios@gmail.com</a>
+    <p class="social">
+      <a href="https://www.youtube.com/channel/UCIoqIQQuc3LO8zk1aiM3Vmg">YouTube</a>
+      <span>·</span>
+      <a href="https://www.tiktok.com/@lippestudios">TikTok</a>
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 Lippe Studios LLC · Tampa, FL, USA</p>
+  <p class="links">
+    <span data-i18n="privacy">Privacy policy</span>:
+    <a href="https://lippegames.github.io/milim/privacidade.html">Milim</a> ·
+    <a href="https://lippegames.github.io/sarrafo/privacidade.html">Sarrafo</a>
+  </p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
