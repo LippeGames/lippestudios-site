@@ -43,27 +43,87 @@ function apply(code) {
 
 // Janela de vídeo: os botões com data-video abrem o vídeo por cima do site.
 // Sem JavaScript, o link continua levando ao YouTube (href normal).
+// Com data-playlist (a playlist do jogo no YouTube), as setinhas ‹ › passam
+// pelos vídeos do mesmo jogo e, quando um acaba, o próximo começa sozinho.
+// Vídeo novo entra na playlist do jogo no YouTube e aparece aqui sem mexer no site.
 var modal = document.getElementById("video-modal");
 var frame = modal.querySelector(".vmodal-frame");
 var lastBtn = null;
+var player = null;
+var apiPromise = null;
 
-function openVideo(id, vertical) {
+// O programa do YouTube que deixa as setinhas mandarem no vídeo.
+// Só é baixado quando alguém abre um vídeo com playlist.
+function loadYouTubeApi() {
+  if (apiPromise) return apiPromise;
+  apiPromise = new Promise(function (resolve, reject) {
+    if (window.YT && window.YT.Player) { resolve(); return; }
+    var prev = window.onYouTubeIframeAPIReady;
+    var s = document.createElement("script");
+    function fail() {
+      window.onYouTubeIframeAPIReady = prev;
+      if (s.parentNode) s.parentNode.removeChild(s);
+      apiPromise = null; // tenta de novo no próximo vídeo
+      reject();
+    }
+    var timer = setTimeout(fail, 10000);
+    window.onYouTubeIframeAPIReady = function () { clearTimeout(timer); if (prev) prev(); resolve(); };
+    s.onerror = function () { clearTimeout(timer); fail(); };
+    s.src = "https://www.youtube.com/iframe_api";
+    document.head.appendChild(s);
+  });
+  return apiPromise;
+}
+
+function dropPlayer() {
+  if (player) { try { player.destroy(); } catch (e) {} }
+  player = null;
+}
+
+function openVideo(id, vertical, list) {
+  dropPlayer();
   frame.innerHTML = "";
+  var src = "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&rel=0&playsinline=1";
+  if (list) {
+    // list + loop: o YouTube toca a playlist do jogo em sequência e recomeça no fim
+    src += "&list=" + encodeURIComponent(list) + "&loop=1&enablejsapi=1";
+    if (/^https?:/.test(location.origin)) src += "&origin=" + encodeURIComponent(location.origin);
+  }
   var f = document.createElement("iframe");
-  f.src = "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&rel=0&playsinline=1";
+  f.src = src;
   f.title = "YouTube";
   f.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
   f.allowFullscreen = true;
   frame.appendChild(f);
   modal.classList.toggle("vertical", !!vertical);
+  modal.classList.toggle("has-list", !!list);
   modal.hidden = false;
   document.body.classList.add("no-scroll");
   modal.querySelector(".vmodal-close").focus();
+  if (list) {
+    loadYouTubeApi().then(function () {
+      if (f.parentNode !== frame) return; // a janela já foi fechada ou trocada
+      player = new YT.Player(f);
+    }, function () {
+      // sem o programa do YouTube (bloqueador, rede): o vídeo e a playlist
+      // continuam tocando sozinhos, só as setinhas somem
+      if (f.parentNode === frame) modal.classList.remove("has-list");
+    });
+  }
+}
+
+function stepVideo(dir) {
+  if (!player) return;
+  try {
+    if (dir > 0 && player.nextVideo) player.nextVideo();
+    if (dir < 0 && player.previousVideo) player.previousVideo();
+  } catch (e) { /* player ainda carregando */ }
 }
 
 function closeVideo() {
   if (modal.hidden) return;
   modal.hidden = true;
+  dropPlayer();
   frame.innerHTML = ""; // tira o player: o vídeo para de tocar
   document.body.classList.remove("no-scroll");
   if (lastBtn) lastBtn.focus();
@@ -74,14 +134,22 @@ document.addEventListener("click", function (e) {
   if (b) {
     e.preventDefault();
     lastBtn = b;
-    openVideo(b.getAttribute("data-video"), b.hasAttribute("data-vertical"));
+    openVideo(b.getAttribute("data-video"), b.hasAttribute("data-vertical"), b.getAttribute("data-playlist"));
   }
 });
 modal.addEventListener("click", function (e) {
+  if (e.target.closest(".vmodal-prev")) { stepVideo(-1); return; }
+  if (e.target.closest(".vmodal-next")) { stepVideo(1); return; }
   if (e.target === modal || e.target.closest(".vmodal-close")) closeVideo();
 });
 document.addEventListener("keydown", function (e) {
+  if (modal.hidden) return;
   if (e.key === "Escape") closeVideo();
+  // setas do teclado = setinhas da tela (‹ à esquerda, › à direita).
+  // Alt+seta é o "voltar" do navegador; segurar a tecla não pula vários vídeos.
+  if (e.altKey || e.ctrlKey || e.metaKey || e.repeat) return;
+  if (e.key === "ArrowRight") stepVideo(1);
+  if (e.key === "ArrowLeft") stepVideo(-1);
 });
 
 getJSON("lang/index.json").then(function (idx) {

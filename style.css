@@ -76,6 +76,26 @@ footer p{margin:4px 0}
 .vmodal-close{position:absolute;top:-44px;right:0;width:38px;height:38px;border:0;border-radius:50%;
   background:rgba(255,255,255,.16);color:#fff;font:400 28px/38px system-ui,sans-serif;cursor:pointer}
 .vmodal-close:hover{background:rgba(255,255,255,.3)}
+@media (max-height:480px){ /* celular deitado: o X fica por dentro do vídeo para não sair da tela */
+  .vmodal-close{top:6px;right:6px;background:rgba(0,0,0,.55);z-index:1}
+}
+/* Setinhas ‹ › da playlist do jogo: ficam ao lado do vídeo; no celular, por cima da borda dele */
+.vmodal-nav{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border:0;
+  border-radius:50%;background:rgba(255,255,255,.16);color:#fff;font:400 34px/44px system-ui,sans-serif;
+  cursor:pointer;display:none;padding:0;direction:ltr;unicode-bidi:isolate}
+.vmodal-nav:hover{background:rgba(255,255,255,.3)}
+.vmodal.has-list .vmodal-nav{display:block}
+.vmodal-prev{left:-58px}
+.vmodal-next{right:-58px}
+.vmodal.has-list .vmodal-box{width:min(84vw,calc(84vh*16/9))}
+.vmodal.has-list.vertical .vmodal-box{width:min(84vw,calc(86vh*9/16))}
+@media (max-width:760px){
+  .vmodal.has-list .vmodal-box{width:min(92vw,calc(84vh*16/9))}
+  .vmodal.has-list.vertical .vmodal-box{width:min(92vw,calc(80vh*9/16))}
+  .vmodal-nav{background:rgba(0,0,0,.55);width:40px;height:40px;font-size:30px;line-height:38px}
+  .vmodal-prev{left:6px}
+  .vmodal-next{right:6px}
+}
 body.no-scroll{overflow:hidden}
 
 @media (max-width:560px){
