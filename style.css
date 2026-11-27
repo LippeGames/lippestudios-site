@@ -50,11 +50,8 @@ h2{font-size:clamp(26px,4vw,36px);margin:0 0 24px;letter-spacing:-.3px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:24px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;
   display:flex;flex-direction:column;box-shadow:0 6px 24px rgba(20,40,90,.07)}
-.card img,.card-art{width:100%;aspect-ratio:16/9;object-fit:cover}
-.card-art.poo{display:grid;place-items:center;text-align:center;
-  background:radial-gradient(circle at 70% 20%,#c98f4a,#6b4423 75%);
-  color:#fff;font:800 32px/1.1 system-ui,sans-serif;text-shadow:0 3px 0 rgba(0,0,0,.3)}
-.card-art.poo em{font-style:normal;font-size:20px;opacity:.9}
+.card img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.card-actions{display:flex;flex-wrap:wrap;gap:10px}
 .card-body{padding:18px 20px 22px;display:flex;flex-direction:column;gap:10px;flex:1;align-items:flex-start}
 .card h3{margin:0;font-size:24px}
 .card p{margin:0;color:var(--muted);font-size:15.5px;flex:1}
