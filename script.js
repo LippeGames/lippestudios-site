@@ -41,6 +41,49 @@ function apply(code) {
   }).catch(function () { /* fica em inglês */ });
 }
 
+// Janela de vídeo: os botões com data-video abrem o vídeo por cima do site.
+// Sem JavaScript, o link continua levando ao YouTube (href normal).
+var modal = document.getElementById("video-modal");
+var frame = modal.querySelector(".vmodal-frame");
+var lastBtn = null;
+
+function openVideo(id, vertical) {
+  frame.innerHTML = "";
+  var f = document.createElement("iframe");
+  f.src = "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&rel=0&playsinline=1";
+  f.title = "YouTube";
+  f.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+  f.allowFullscreen = true;
+  frame.appendChild(f);
+  modal.classList.toggle("vertical", !!vertical);
+  modal.hidden = false;
+  document.body.classList.add("no-scroll");
+  modal.querySelector(".vmodal-close").focus();
+}
+
+function closeVideo() {
+  if (modal.hidden) return;
+  modal.hidden = true;
+  frame.innerHTML = ""; // tira o player: o vídeo para de tocar
+  document.body.classList.remove("no-scroll");
+  if (lastBtn) lastBtn.focus();
+}
+
+document.addEventListener("click", function (e) {
+  var b = e.target.closest ? e.target.closest("[data-video]") : null;
+  if (b) {
+    e.preventDefault();
+    lastBtn = b;
+    openVideo(b.getAttribute("data-video"), b.hasAttribute("data-vertical"));
+  }
+});
+modal.addEventListener("click", function (e) {
+  if (e.target === modal || e.target.closest(".vmodal-close")) closeVideo();
+});
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") closeVideo();
+});
+
 getJSON("lang/index.json").then(function (idx) {
   select.innerHTML = "";
   idx.languages.forEach(function (l) {
