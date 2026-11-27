@@ -1,8 +1,10 @@
 # Gera os arquivos lang/*.json do site. Para mudar um texto: editar aqui e rodar de novo
 # (python ferramentas/gerar_idiomas.py), ou editar direto o lang/<idioma>.json.
-import json, os
+import json, os, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from textos_sobre import SOBRE  # seção "Quem somos" (um arquivo só para ela)
 
 K = ["nav_games", "nav_about", "nav_contact", "hero_sub", "hero_cta", "pub_title", "dev_title",
      "partner_title", "partner_note", "trailer",
@@ -207,6 +209,7 @@ for code, vals in L.items():
     assert len(vals) == len(K), (code, len(vals), len(K))
     data = dict(zip(K, vals))
     data.update(EXTRA[code])
+    data.update(SOBRE[code])
     with open(os.path.join(ROOT, "lang", code + ".json"), "w", encoding="utf8") as f:
         json.dump(data, f, ensure_ascii=False, indent=1)
 with open(os.path.join(ROOT, "lang", "index.json"), "w", encoding="utf8") as f:
