@@ -55,9 +55,6 @@ h2{font-size:clamp(26px,4vw,36px);margin:0 0 24px;letter-spacing:-.3px}
   background:radial-gradient(circle at 70% 20%,#c98f4a,#6b4423 75%);
   color:#fff;font:800 32px/1.1 system-ui,sans-serif;text-shadow:0 3px 0 rgba(0,0,0,.3)}
 .card-art.poo em{font-style:normal;font-size:20px;opacity:.9}
-.card-art.crav{display:grid;place-items:center;
-  background:radial-gradient(circle at 30% 20%,#7fd35a,#2f8f3a 70%);
-  color:#fff;font:800 44px/1 system-ui,sans-serif;text-shadow:0 3px 0 rgba(0,0,0,.25)}
 .card-body{padding:18px 20px 22px;display:flex;flex-direction:column;gap:10px;flex:1;align-items:flex-start}
 .card h3{margin:0;font-size:24px}
 .card p{margin:0;color:var(--muted);font-size:15.5px;flex:1}
