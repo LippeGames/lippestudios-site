@@ -21,8 +21,8 @@
  "overspray_tag": "Demo grátis · PC (Steam)",
  "overspray_text": "Um jogo de paintball tático 4v4 em primeira pessoa. Experimente a demo grátis na Steam.",
  "overspray_cta": "Jogar a demo grátis",
- "poo_tag": "Teste fechado · PC (Steam)",
- "poo_text": "Um tycoon cheio de caos. Por enquanto está em teste fechado.",
+ "poo_tag": "Em desenvolvimento · PC (Steam)",
+ "poo_text": "Um tycoon de fazenda caótica: cuide dos bichos, recolha o cocô e monte esteiras e máquinas. Em breve na Steam.",
  "about_title": "Sobre nós",
  "about_p1": "A Lippe Studios é um estúdio independente de jogos. Fazemos jogos para celular e para PC, e gostamos de jogos que ficam melhores com os amigos.",
  "about_p2": "Nossos jogos têm nomes em hebraico: Milim quer dizer “palavras”, Crav quer dizer “batalha” e Sordim quer dizer “os sobreviventes”. Todos vivem no mesmo mundo de ilhas flutuantes.",
@@ -30,5 +30,6 @@
  "contact_text": "Dúvidas, imprensa ou parcerias? Escreva para nós.",
  "privacy": "Política de privacidade",
  "by_fazay": "da Fazay Games",
- "lang_label": "Idioma"
+ "lang_label": "Idioma",
+ "video": "Ver o vídeo"
 }

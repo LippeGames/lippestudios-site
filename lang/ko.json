@@ -21,8 +21,8 @@
  "overspray_tag": "무료 체험판 · PC (Steam)",
  "overspray_text": "1인칭 시점의 전술적 4대4 페인트볼 슈터. Steam에서 무료 체험판을 해 보세요.",
  "overspray_cta": "무료 체험판 플레이",
- "poo_tag": "비공개 테스트 · PC (Steam)",
- "poo_text": "혼돈으로 가득한 타이쿤 게임. 현재는 비공개 테스트 중입니다.",
+ "poo_tag": "개발 중 · PC (Steam)",
+ "poo_text": "혼돈의 농장 타이쿤: 동물을 돌보고, 똥을 모으고, 컨베이어와 기계를 지으세요. 곧 Steam 출시.",
  "about_title": "소개",
  "about_p1": "Lippe Studios는 인디 게임 스튜디오입니다. 휴대폰과 PC용 게임을 만들며, 친구와 함께할 때 더 재미있는 게임을 좋아합니다.",
  "about_p2": "우리 게임의 이름은 히브리어에서 왔습니다. Milim은 “단어”, Crav는 “전투”, Sordim은 “생존자들”이라는 뜻입니다. 모두 같은 떠다니는 섬의 세계에 살고 있습니다.",
@@ -30,5 +30,6 @@
  "contact_text": "문의, 보도, 제휴는 메일로 보내 주세요.",
  "privacy": "개인정보 처리방침",
  "by_fazay": "Fazay Games 제작",
- "lang_label": "언어"
+ "lang_label": "언어",
+ "video": "영상 보기"
 }

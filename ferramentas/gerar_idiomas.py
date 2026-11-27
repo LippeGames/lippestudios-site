@@ -183,11 +183,32 @@ NAMES = {"en": "English", "pt": "Português", "es": "Español", "fr": "Français
          "tr": "Türkçe", "id": "Bahasa Indonesia", "vi": "Tiếng Việt", "hi": "हिन्दी", "ar": "العربية",
          "ja": "日本語", "ko": "한국어", "zh": "中文"}
 
+# Textos acrescentados/corrigidos depois (26/11/2026): botão "Ver o vídeo" e o Poo Tycoon
+# (em desenvolvimento pela Fazay Games, em breve na Steam). Sobrescrevem o que está acima.
+EXTRA = {
+ "en": {"video": "Watch the video", "poo_tag": "In development · PC (Steam)", "poo_text": "A chaotic farm tycoon: take care of the animals, collect the poo and build conveyors and machines. Coming soon to Steam."},
+ "pt": {"video": "Ver o vídeo", "poo_tag": "Em desenvolvimento · PC (Steam)", "poo_text": "Um tycoon de fazenda caótica: cuide dos bichos, recolha o cocô e monte esteiras e máquinas. Em breve na Steam."},
+ "es": {"video": "Ver el video", "poo_tag": "En desarrollo · PC (Steam)", "poo_text": "Un tycoon de granja caótica: cuida a los animales, recoge la caca y construye cintas y máquinas. Muy pronto en Steam."},
+ "fr": {"video": "Voir la vidéo", "poo_tag": "En développement · PC (Steam)", "poo_text": "Un tycoon de ferme chaotique : prenez soin des animaux, ramassez le caca et construisez tapis roulants et machines. Bientôt sur Steam."},
+ "de": {"video": "Video ansehen", "poo_tag": "In Entwicklung · PC (Steam)", "poo_text": "Ein chaotisches Bauernhof-Tycoon: Kümmere dich um die Tiere, sammle den Mist und baue Förderbänder und Maschinen. Bald auf Steam."},
+ "ru": {"video": "Смотреть видео", "poo_tag": "В разработке · ПК (Steam)", "poo_text": "Хаотичный фермерский тайкун: ухаживайте за животными, собирайте навоз и стройте конвейеры и машины. Скоро в Steam."},
+ "tr": {"video": "Videoyu izle", "poo_tag": "Geliştiriliyor · PC (Steam)", "poo_text": "Kaotik bir çiftlik tycoon oyunu: hayvanlara bak, kakayı topla, bantlar ve makineler kur. Yakında Steam'de."},
+ "id": {"video": "Tonton video", "poo_tag": "Dalam pengembangan · PC (Steam)", "poo_text": "Tycoon peternakan yang kacau: rawat hewan, kumpulkan kotoran, dan bangun konveyor serta mesin. Segera hadir di Steam."},
+ "vi": {"video": "Xem video", "poo_tag": "Đang phát triển · PC (Steam)", "poo_text": "Một game tycoon nông trại hỗn loạn: chăm sóc thú, gom phân và xây băng chuyền cùng máy móc. Sắp ra mắt trên Steam."},
+ "hi": {"video": "वीडियो देखें", "poo_tag": "विकास में · PC (Steam)", "poo_text": "एक अफरा-तफरी वाला फ़ार्म टाइकून: जानवरों की देखभाल करें, गोबर इकट्ठा करें और कन्वेयर व मशीनें बनाएँ। जल्द ही Steam पर।"},
+ "ar": {"video": "شاهد الفيديو", "poo_tag": "قيد التطوير · PC (Steam)", "poo_text": "لعبة إدارة مزرعة فوضوية: اعتنِ بالحيوانات واجمع الروث وابنِ السيور والآلات. قريبًا على Steam."},
+ "ja": {"video": "動画を見る", "poo_tag": "開発中 · PC (Steam)", "poo_text": "カオスな牧場経営ゲーム。動物の世話をして、うんちを集め、ベルトコンベアや機械を作ろう。Steamで近日公開。"},
+ "ko": {"video": "영상 보기", "poo_tag": "개발 중 · PC (Steam)", "poo_text": "혼돈의 농장 타이쿤: 동물을 돌보고, 똥을 모으고, 컨베이어와 기계를 지으세요. 곧 Steam 출시."},
+ "zh": {"video": "观看视频", "poo_tag": "开发中 · PC (Steam)", "poo_text": "混乱农场大亨:照顾动物、收集便便、建造传送带和机器。即将登陆 Steam。"},
+}
+
 os.makedirs(os.path.join(ROOT, "lang"), exist_ok=True)
 for code, vals in L.items():
     assert len(vals) == len(K), (code, len(vals), len(K))
+    data = dict(zip(K, vals))
+    data.update(EXTRA[code])
     with open(os.path.join(ROOT, "lang", code + ".json"), "w", encoding="utf8") as f:
-        json.dump(dict(zip(K, vals)), f, ensure_ascii=False, indent=1)
+        json.dump(data, f, ensure_ascii=False, indent=1)
 with open(os.path.join(ROOT, "lang", "index.json"), "w", encoding="utf8") as f:
     json.dump({"default": "en", "languages": [{"code": c, "name": NAMES[c]} for c in L]}, f, ensure_ascii=False, indent=1)
 print(len(L), "idiomas gerados")

@@ -21,8 +21,8 @@
  "overspray_tag": "Kostenlose Demo · PC (Steam)",
  "overspray_text": "Ein taktischer 4-gegen-4-Paintball-Shooter aus der Ego-Perspektive. Probiere die kostenlose Demo auf Steam aus.",
  "overspray_cta": "Kostenlose Demo spielen",
- "poo_tag": "Geschlossener Test · PC (Steam)",
- "poo_text": "Ein Tycoon-Spiel voller Chaos. Vorerst befindet es sich im geschlossenen Test.",
+ "poo_tag": "In Entwicklung · PC (Steam)",
+ "poo_text": "Ein chaotisches Bauernhof-Tycoon: Kümmere dich um die Tiere, sammle den Mist und baue Förderbänder und Maschinen. Bald auf Steam.",
  "about_title": "Über uns",
  "about_p1": "Lippe Studios ist ein unabhängiges Spielestudio. Wir machen Spiele für Handy und PC und mögen Spiele, die mit Freunden besser sind.",
  "about_p2": "Unsere Spiele tragen hebräische Namen: Milim bedeutet „Wörter“, Crav bedeutet „Schlacht“ und Sordim bedeutet „die Überlebenden“. Alle leben in derselben Welt aus schwebenden Inseln.",
@@ -30,5 +30,6 @@
  "contact_text": "Fragen, Presse oder Partnerschaften? Schreib uns.",
  "privacy": "Datenschutzerklärung",
  "by_fazay": "von Fazay Games",
- "lang_label": "Sprache"
+ "lang_label": "Sprache",
+ "video": "Video ansehen"
 }

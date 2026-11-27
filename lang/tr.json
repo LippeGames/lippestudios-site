@@ -21,8 +21,8 @@
  "overspray_tag": "Ücretsiz demo · PC (Steam)",
  "overspray_text": "Birinci şahıs bakış açısıyla taktik 4'e 4 paintball nişancı oyunu. Ücretsiz demoyu Steam'de dene.",
  "overspray_cta": "Ücretsiz demoyu oyna",
- "poo_tag": "Kapalı test · PC (Steam)",
- "poo_text": "Kaos dolu bir tycoon oyunu. Şimdilik kapalı testte.",
+ "poo_tag": "Geliştiriliyor · PC (Steam)",
+ "poo_text": "Kaotik bir çiftlik tycoon oyunu: hayvanlara bak, kakayı topla, bantlar ve makineler kur. Yakında Steam'de.",
  "about_title": "Hakkımızda",
  "about_p1": "Lippe Studios bağımsız bir oyun stüdyosudur. Telefon ve PC için oyunlar yapıyoruz ve arkadaşlarla daha eğlenceli olan oyunları seviyoruz.",
  "about_p2": "Oyunlarımızın adları İbranicedir: Milim “kelimeler”, Crav “savaş”, Sordim “hayatta kalanlar” demektir. Hepsi aynı süzülen adalar dünyasında yaşar.",
@@ -30,5 +30,6 @@
  "contact_text": "Sorular, basın veya ortaklıklar için bize yazın.",
  "privacy": "Gizlilik politikası",
  "by_fazay": "Fazay Games'ten",
- "lang_label": "Dil"
+ "lang_label": "Dil",
+ "video": "Videoyu izle"
 }

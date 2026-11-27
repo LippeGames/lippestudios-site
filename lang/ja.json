@@ -21,8 +21,8 @@
  "overspray_tag": "無料体験版 · PC (Steam)",
  "overspray_text": "一人称視点の戦術的な4対4ペイントボールシューター。Steamで無料体験版を試せます。",
  "overspray_cta": "無料体験版を遊ぶ",
- "poo_tag": "クローズドテスト中 · PC (Steam)",
- "poo_text": "カオスだらけのタイクーンゲーム。現在はクローズドテスト中です。",
+ "poo_tag": "開発中 · PC (Steam)",
+ "poo_text": "カオスな牧場経営ゲーム。動物の世話をして、うんちを集め、ベルトコンベアや機械を作ろう。Steamで近日公開。",
  "about_title": "私たちについて",
  "about_p1": "Lippe Studios はインディーゲームスタジオです。スマホとPC向けのゲームを作っていて、友だちと遊ぶともっと楽しいゲームが好きです。",
  "about_p2": "ゲームの名前はヘブライ語から:Milim は「言葉」、Crav は「戦い」、Sordim は「生き残った者たち」という意味です。どれも同じ浮遊島の世界に住んでいます。",
@@ -30,5 +30,6 @@
  "contact_text": "ご質問、取材、提携のご相談はこちらへ。",
  "privacy": "プライバシーポリシー",
  "by_fazay": "Fazay Games 制作",
- "lang_label": "言語"
+ "lang_label": "言語",
+ "video": "動画を見る"
 }
