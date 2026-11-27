@@ -8,7 +8,7 @@
     --accent:#5b8dff; --accent-ink:#071126; --line:#243556; --live:#4fd18b; --soon:#f2c14e; }
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:57px}
 body{margin:0;background:var(--bg);color:var(--text);
   font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
 img{max-width:100%;display:block}
@@ -88,8 +88,32 @@ body.no-scroll{overflow:hidden}
   .wrap{padding:48px 16px}
 }
 
+/* Camadas: no computador, cada parte do site ocupa uma tela inteira e a rolagem
+   para encaixada no começo de cada uma (nenhum título fica cortado no pé da tela).
+   No celular a página rola normal. --nav = altura da barra do topo. */
+.screen + .screen.wrap{border-top:1px solid var(--line)}
+.wrap.screen{padding-bottom:24px}
+@media (min-width:900px) and (min-height:560px){
+  :root{--nav:57px}
+  html{scroll-snap-type:y mandatory}
+  .hero{height:calc(100vh - var(--nav));min-height:0;scroll-snap-align:start}
+  .screen{min-height:calc(100vh - var(--nav));scroll-snap-align:start;
+    display:flex;flex-direction:column;justify-content:center}
+  .wrap.screen{padding-top:40px;padding-bottom:40px;text-align:center}
+  .screen + .screen.wrap{border-top:0}
+  .wrap.screen .grid{grid-template-columns:repeat(auto-fit,minmax(260px,320px));justify-content:center;text-align:start}
+  .about.screen .wrap{padding-top:24px;padding-bottom:24px}
+  .about.screen h2{margin-bottom:12px}
+  .about.screen h3{margin:18px 0 2px}
+  .about.screen p{margin:0}
+  .about.screen .about-games{margin-top:6px}
+  .about.screen .about-games li{margin:2px 0}
+  .screen.last #contact{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center}
+  .screen.last #contact .btn{align-self:center}
+}
+
 /* Seção "Quem somos" */
 .about h3{margin:30px 0 8px;font-size:21px}
-.about-games{margin:12px 0 0;padding-left:22px;color:var(--muted);font-size:18px}
+.about-games{margin:12px 0 0;padding-inline-start:22px;color:var(--muted);font-size:18px}
 .about-games li{margin:6px 0}
 .about-games strong{color:var(--text)}
